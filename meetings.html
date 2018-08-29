@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Alcoholics Anonymous India - Get help for your Drinking Problem</title>
+<link rel="icon" href="images/fav-icon-2-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/fav-icon-2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/fav-icon-2-180x180.png" />
+<meta name="msapplication-TileImage" content="images/fav-icon-2-270x270.png" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/libs/handlebars.min.js"></script>
+<script src="//maps.google.com/maps/api/js?key=AIzaSyDuBJlBZ2XbdDlu53shrfj-sC30RvsqIaI"></script>
+<script src="jquery.storelocator.js"></script>
+<script src="js/function.js"></script>
+</head>
+<body class="blue-background">
+<header class="site-header"> <a class="top-back" href="index.html"><i aria-hidden="true" class="fa fa-chevron-left"></i>Back</a>
+    <h2 class="top-title">Meeting Search</h2>
+    <a class="top-home" href="index.html"><i aria-hidden="true" class="fa fa-home"></i></a> </header>
+<div class="container pt-5 pb-5">
+    <div class="search-box" id="form-container">
+        <form id="user-location" method="post" action="#">
+            <label ><strong>Search For AA Meetings in India</strong></label>
+            <div class="input-group mb-3">
+                <input type="text" name="address" id="address" placeholder="Enter city or postcode" class="form-control">
+                <div class="input-group-append">
+                    <button type="button" id="search_address" class="btn btn-dark"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+	<div id="map-container">
+    
+		<div class="search-result" id="loc-list">
+        <div class="row">
+        <div class="col-md-6"><div id="map" style="height:300px;"></div></div> 
+        <div class="col-md-6">
+			<ul id="list">            
+			</ul>
+      </div>      
+            
+		</div>
+
+		
+        </div>
+	</div>
+
+</div>
+<script type="text/javascript">
+  
+  
+ $(document).ready(function(e) {
+    $('#map-container').storeLocator({defaultLoc: true, defaultLat: '28.613939', defaultLng : '77.209023'});
+	
+	$('#search_address').on('click', function(){
+		
+		if($('#address').val() != '')
+		{
+			$('#user-location').submit();			
+		}
+		
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Alcoholics Anonymous India - Get help for your Drinking Problem</title>
+<link rel="icon" href="images/fav-icon-2-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/fav-icon-2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/fav-icon-2-180x180.png" />
+<meta name="msapplication-TileImage" content="images/fav-icon-2-270x270.png" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/function.js"></script>
+</head>
+<body onLoad="loadEvent();">
+<header class="site-header"><a class="top-back" href="index.html"><i aria-hidden="true" class="fa fa-chevron-left"></i> Back</a>
+    <h2 class="top-title">Events</h2>
+    <a class="top-home" href="index.html"><i aria-hidden="true" class="fa fa-home"></i></a> </header>
+<div class="container pt-4 pb-3" id="meetings">
+    <h4>A.A. Conference, Anniversaries & Conventions</h4>
+    <div class="meeting-wrap">
+        <h4>A.A. Events in August 2018</h4>
+        <ul>
+            <li><strong>11th and 12th August 2018</strong> –  Coimbatore Central District Committee of AA Steps & Traditions From the Valley Program >> <a href="#">Click here</a></li>
+            <li><strong>A A SURAT</strong> CELEBRATES ITS  25 YRS ON 11TH AUGUST’18 AT DAYALJI ASHRAM MAJURA GATE SURAT FROM 1000AM ONWARDS FOLLOWED BY 25YRS OF ITS CO FOUNDER R.I. 25YRS OF MOTHER GROUP OF A A SURAT NAVJIVAN GROUP  ON 12TH AUG’18 AT KANJIBHAI DESAI HALL CHOWK BAJAR SURAT FROM 1000 AM ONWARDS.ALL ARE REQUESTED TO PLEASE JOIN US IN GIVING THANKS TO THE HIGHER POWER.</li>
+            <li><strong>24th, 25th, 26th 2018.  – A. A. Udupi Canara Intergroup 2nd National Convention</strong>‘<br>
+                at RNS Highway Hotel, 
+                Murudeshwar, NH66, UTTARA KANNADA, KARNATAKA<br>
+                Contact 9964280840, 9449453528, 9964024499 <br>
+                Email: udupicanara@gmail.com </li>
+        </ul>
+    </div>
+    <div class="meeting-wrap">
+        <h4>A.A. Events in August 2018</h4>
+        <ul>
+            <li><strong>11th and 12th August 2018</strong> –  Coimbatore Central District Committee of AA Steps & Traditions From the Valley Program >> <a href="#">Click here</a></li>
+            <li><strong>A A SURAT</strong> CELEBRATES ITS  25 YRS ON 11TH AUGUST’18 AT DAYALJI ASHRAM MAJURA GATE SURAT FROM 1000AM ONWARDS FOLLOWED BY 25YRS OF ITS CO FOUNDER R.I. 25YRS OF MOTHER GROUP OF A A SURAT NAVJIVAN GROUP  ON 12TH AUG’18 AT KANJIBHAI DESAI HALL CHOWK BAJAR SURAT FROM 1000 AM ONWARDS.ALL ARE REQUESTED TO PLEASE JOIN US IN GIVING THANKS TO THE HIGHER POWER.</li>
+            <li><strong>24th, 25th, 26th 2018.  – A. A. Udupi Canara Intergroup 2nd National Convention</strong>‘<br>
+                at RNS Highway Hotel, 
+                Murudeshwar, NH66, UTTARA KANNADA, KARNATAKA<br>
+                Contact 9964280840, 9449453528, 9964024499 <br>
+                Email: udupicanara@gmail.com </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+function loadEvent(){
+$.ajax({
+	 type: 'POST',
+	 url: siteurl + 'getcontent.php',
+	 dataType: 'json',
+	 data: {post_id:957},
+	 crossDomain: true,
+	 success: function(data){
+		 if(data['success'])
+		 {
+			 $('#meetings').html(data['success']);
+			 $('.date-setting').toggleClass('meeting-wrap');
+		 }
+	  }
+   });
+}
+</script>
+</body>
+</html>

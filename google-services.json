@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "436387133557",
+    "firebase_url": "https://aagsoindia.firebaseio.com",
+    "project_id": "aagsoindia",
+    "storage_bucket": "aagsoindia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436387133557:android:197d2bb65bf65c37",
+        "android_client_info": {
+          "package_name": "aagsoindia.org"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436387133557-joofkh9j9p8lhvrg9vekobl19dhsv7d3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdI_HEkOljMt6SPmoWnN5ZXYL0naaaYOA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
