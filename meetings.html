@@ -12,12 +12,18 @@
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script src="js/jquery-3.2.1.min.js"></script> 
-<script src="js/bootstrap.min.js"></script>
+<script src="./js/jquery-3.2.1.min.js"></script> 
+<script src="./js/bootstrap.min.js"></script>
 <script src="js/libs/handlebars.min.js"></script>
 <script src="//maps.google.com/maps/api/js?key=AIzaSyDuBJlBZ2XbdDlu53shrfj-sC30RvsqIaI"></script>
-<script src="jquery.storelocator.js"></script>
-<script src="js/function.js"></script>
+<script src="./jquery.storelocator.js"></script>
+<script src="./js/function.js"></script>
+<script type="text/javascript">
+function checkdevice(){
+	loadMap();
+}
+document.addEventListener("deviceready", checkdevice, false);
+</script>
 </head>
 <body class="blue-background">
 <header class="site-header"> <a class="top-back" href="index.html"><i aria-hidden="true" class="fa fa-chevron-left"></i>Back</a>
@@ -54,11 +60,9 @@
 
 </div>
 <script type="text/javascript">
-  
-  
- $(document).ready(function() {
+function loadMap(){
     $('#map-container').storeLocator({defaultLoc: true, defaultLat: '28.613939', defaultLng : '77.209023'});
-	
+}
 	$('#search_address').on('click', function(){
 		
 		if($('#address').val() != '')
@@ -67,7 +71,7 @@
 		}
 		
 	});
-});
+
 </script>
 </body>
 </html>
