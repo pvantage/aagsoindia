@@ -21,7 +21,7 @@
 <div class="container p-0">
     <div class="main-menu">
         <ul>
-            <li><a href="meetings.html">Meetings</a></li>
+            <li><a href="javascript:void(0)" onClick="showMeeting('http://www.aagsoindia.org/appapi/meetings.html');">Meetings</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="faq.html">FAQs</a></li>
             <li><a href="contact.html">Need Help?</a></li>
@@ -33,5 +33,10 @@
         <h1>Quote of The Day</h1>
         You will never have a completely bad day if you show kindness at least once. </div>-->
 </div>
+<script type="text/javascript">
+function showMeeting(target_urls){
+	cordova.InAppBrowser.open(target_urls, '_system', 'location=no');
+}
+</script>
 </body>
 </html>
