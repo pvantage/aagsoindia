@@ -37,6 +37,13 @@
 function showMeeting(target_urls){
 	cordova.InAppBrowser.open(target_urls, '_blank', 'location=no');
 }
+
+var ref = window.open(encodeURI(url), '_blank', options);
+ref.addEventListener('loadstop', function(event) {        
+    if (event.url.match("index.html")) {
+        ref.close();
+    }
+});
 </script>
 </body>
 </html>
