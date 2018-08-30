@@ -23,21 +23,98 @@
 <div class="container">
     <div class="contact-form">              
             <div class="form-group">
-                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Please entetr your name.">
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="* Please entetr your name.">
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Please enter enter email">
+                <input type="email" class="form-control" id="email" name="email" placeholder="* Please enter enter email">
             </div>
             <div class="form-group">
                 <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
             </div>
             <div class="form-group">
-                <textarea class="form-control" id="yourmessage" name="yourmessage" rows="3" placeholder="Write your message."></textarea>
+                <textarea class="form-control" id="yourmessage" name="yourmessage" rows="3" placeholder="* Write your message."></textarea>
             </div>
             <div class="text-center">
-                <button type="button" class="btn btn-dark">Submit</button>
+                <button type="button" class="btn btn-dark" id="submit_frm">Submit</button>
             </div>       
     </div>
+    
+    
+<div id="confirmation" class="modal fade" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">        	          
+        <h2 class="modal-title">Confirmation</h2>
+        <button type="button" class="close" data-dismiss="modal">&times;</button> 
+      </div>
+      <div class="modal-body">
+      <p class="confirm">Thank you, we will get back to you shortly.</p>
+        
+      </div>
+    </div>
+
+  </div>
 </div>
+
+
+
+<div id="form_error" class="modal fade" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">        	          
+        <h2 class="modal-title">Error!!</h2>
+        <button type="button" class="close" data-dismiss="modal">&times;</button> 
+      </div>
+      <div class="modal-body">
+      <p class="error"></p>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+    
+    
+</div>
+
+<script type="text/javascript">
+$('#submit_frm').on('click', function(){
+	
+	var firstname = $('input[name="firstname"]').val();
+	var email = $('input[name="email"]').val();
+	var subject = $('input[name="subject"]').val();
+	var yourmessage = $('textarea[name="yourmessage"]').val();
+	
+		
+	$.ajax({
+	 type: 'POST',
+	 url: siteurl + 'sendmail.php',
+	 dataType: 'json',
+	 data: {firstname:firstname, email:email, subject:subject, yourmessage:yourmessage},
+	 crossDomain: true,
+	 success: function(data){
+		 
+		 if(data['error'])
+		 {			 
+			 var error_txt = '';
+			 
+			 if(data['error']['firstname']) error_txt +=  data['error']['firstname'] + "<br>";
+			 if(data['error']['email']) error_txt +=  data['error']['email'] + "<br>";
+			 if(data['error']['yourmessage']) error_txt +=  data['error']['yourmessage'];
+			 
+			 $('.error').html(error_txt);
+			$('#form_error').modal('show');
+			 
+		 }else if(data['success'])
+		 {
+			$('.contact-form input, .contact-form textarea').val(''); 
+			$('#confirmation').modal('show'); 
+		 }
+	  }
+   });
+	
+});
+</script>
+
 </body>
 </html>
