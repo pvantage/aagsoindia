@@ -11,7 +11,6 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script src="./js/jquery-3.2.1.min.js"></script> 
 <script src="./js/bootstrap.min.js"></script>
 <script src="js/libs/handlebars.min.js"></script>
@@ -19,13 +18,26 @@
 <script src="./jquery.storelocator.js"></script>
 <script src="./js/function.js"></script>
 <script type="text/javascript">
-function checkdevice(){
+/*function checkdevice(){
 	loadMap();
-}
-document.addEventListener("deviceready", checkdevice, false);
+}*/
+//document.addEventListener("deviceready", checkdevice, false);
+</script>
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+	jQuery( document ).on( "mobileinit", function() {
+		jQuery.mobile.allowCrossDomainPages = true;
+	});
+	var contentType ="application/x-www-form-urlencoded; charset=utf-8";
+    if(window.XDomainRequest){contentType = "text/plain";}
+		jQuery.support.cors = true;
+	
+});
+
 </script>
 </head>
-<body class="blue-background">
+<body class="blue-background" onLoad="loadMap();">
 <header class="site-header"> <a class="top-back" href="index.html"><i aria-hidden="true" class="fa fa-chevron-left"></i>Back</a>
     <h2 class="top-title">Meeting Search</h2>
     <a class="top-home" href="index.html"><i aria-hidden="true" class="fa fa-home"></i></a> </header>
