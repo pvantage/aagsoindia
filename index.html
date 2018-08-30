@@ -39,10 +39,12 @@ function showMeeting(target_urls){
 }
 
 var ref = window.open(encodeURI(url), '_blank', options);
-ref.addEventListener('loadstop', function(event) {        
-    if (event.url.match("index.html")) {
+ref.addEventListener('loadstop', function(event) {
+	
+	alert(event.url);        
+    /*if (event.url.match("index.html")) {
         ref.close();
-    }
+    }*/
 });
 </script>
 </body>
