@@ -38,14 +38,21 @@ function showMeeting(target_urls){
 	cordova.InAppBrowser.open(target_urls, '_blank', 'location=no');
 }
 
-var ref = window.open(encodeURI(url), '_blank', options);
-ref.addEventListener('loadstop', function(event) {
-	
-	alert(event.url);        
-    /*if (event.url.match("index.html")) {
-        ref.close();
-    }*/
-});
+var win=window.open( "myurl", "_blank");
+win.addEventListener( "loadstop", function(){
+       var loop = window.setInterval(function(){
+           win.executeScript({
+                   code: "window.shouldClose"
+               },
+               function(values){
+                   if(values[0]){
+                     win.close();
+                     window.clearInterval(loop);
+                   }
+               }
+           );
+       },100);
+   });
 </script>
 </body>
 </html>
