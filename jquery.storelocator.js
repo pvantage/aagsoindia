@@ -21,7 +21,7 @@ $.fn.storeLocator = function(options) {
       'storeLimit': 40,
       'distanceAlert': 5000,
       'dataType': 'xml',
-      'dataLocation': 'http://www.aagsoindia.org/locations.xml',
+      'dataLocation': 'locations.xml',
       'listColor1': 'ffffff',
       'listColor2': 'eeeeee',
       'originMarker': false,
