@@ -37,11 +37,11 @@
 function showMeeting(target_urls){
 	var targeed_url = cordova.InAppBrowser.open(target_urls, '_blank', 'location=no,zoom=no,clearcache=yes');
 	
-	ref.addEventListener('loadstop', function(event) {        
-    if (event.url.match("http://www.aagsoindia.org/appapi/meetings.html")) {
-        ref.close();
-    }
-});
+	/*ref.addEventListener('loadstop', function(event) {        
+		if (event.url.match("http://www.aagsoindia.org/appapi/meetings.html")) {
+			ref.close();
+		}
+	});*/
 }
 
 /*var win=window.open( "http://www.aagsoindia.org/appapi/meetings.html", "_blank");
