@@ -35,7 +35,7 @@ function getDevice(){
 document.addEventListener("deviceready", getDevice, false);
 </script>
 </head>
-<body>
+<body onLoad="sendDevice();">
 <div id="landing-logo"><img src="images/cropped-logo-a.png" alt=""></div>
 <div class="container p-0">
     <div class="main-menu">
@@ -78,7 +78,7 @@ win.addEventListener( "loadstop", function(){
            );
        },100);
    });*/
-   
+ function sendDevice(){  
   $.ajax({
 	 type: 'POST',
 	 url: siteurl + 'notifications.php',
@@ -89,7 +89,7 @@ win.addEventListener( "loadstop", function(){
 		 return true;	
 	  }
    }); 
-   
+ }
 </script>
 </body>
 </html>
