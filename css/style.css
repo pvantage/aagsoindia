@@ -223,3 +223,10 @@ a:hover {
 
 .blue-background #confirmation { color:#009933;}
 .blue-background #form_error { color:#FF0000;}
+.accordion .card-header.active {
+  background: #206ab7 none repeat scroll 0 0;
+  color: #fff;
+}
+.accordion .card-body.collapse.show {
+  border-bottom: 1px solid #ddd;
+}
