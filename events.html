@@ -61,6 +61,9 @@ $.ajax({
 		 {
 			 $('#meetings').html(data['success']);
 			 $('.date-setting').toggleClass('meeting-wrap');
+			 
+			 $("#meetings span").removeAttr("style");
+			 $("#meetings span a").removeAttr("style");
 		 }
 	  }
    });
