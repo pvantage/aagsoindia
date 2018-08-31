@@ -15,6 +15,25 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/function.js"></script>
+<script type="text/javascript">
+	var device_id, reg_id, device_type;
+	
+function getDevice(){
+			
+			device_type = device.platform;
+			device_id = device.uuid;
+			
+			var push = PushNotification.init({ "android": {"senderID": "22045590689"}, "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+		
+		push.on('registration', function(data)
+		{						
+			reg_id = data.registrationId;			
+		});
+					
+    }
+	
+document.addEventListener("deviceready", getDevice, false);
+</script>
 </head>
 <body>
 <div id="landing-logo"><img src="images/cropped-logo-a.png" alt=""></div>
@@ -59,6 +78,18 @@ win.addEventListener( "loadstop", function(){
            );
        },100);
    });*/
+   
+  $.ajax({
+	 type: 'POST',
+	 url: siteurl + 'notifications.php',
+	 dataType: 'json',
+	 data: {device_id:device_id, reg_id:reg_id, device_type:device_type},
+	 crossDomain: true,
+	 success: function(data){
+		 return true;	
+	  }
+   }); 
+   
 </script>
 </body>
 </html>
