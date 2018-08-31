@@ -27,15 +27,16 @@ function getDevice(){
 		
 		push.on('registration', function(data)
 		{						
-			reg_id = data.registrationId;			
+			reg_id = data.registrationId;
+			
+			sendDevice();			
 		});
-					
-    }
+  }
 	
 document.addEventListener("deviceready", getDevice, false);
 </script>
 </head>
-<body onLoad="sendDevice();">
+<body>
 <div id="landing-logo"><img src="images/cropped-logo-a.png" alt=""></div>
 <div class="container p-0">
     <div class="main-menu">
