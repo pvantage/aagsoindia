@@ -16,7 +16,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/function.js"></script>
 <script type="text/javascript">
-	var device_id, reg_id, device_type;
+var device_id, reg_id, device_type;
 	
 function getDevice(){
 			
@@ -49,36 +49,15 @@ document.addEventListener("deviceready", getDevice, false);
             <li><a href="events.html">Events</a></li>
         </ul>
     </div>
-    <!--<div class="quote-of-the-day">
+   <div class="quote-of-the-day">
         <h1>Quote of The Day</h1>
-        You will never have a completely bad day if you show kindness at least once. </div>-->
+        <p id="quote_of_day"></p> </div>
 </div>
 <script type="text/javascript">
 function showMeeting(target_urls){
-	var targeed_url = cordova.InAppBrowser.open(target_urls, '_blank', 'location=no,zoom=no,clearcache=yes');
-	
-	/*ref.addEventListener('loadstop', function(event) {        
-		if (event.url.match("http://www.aagsoindia.org/appapi/meetings.html")) {
-			ref.close();
-		}
-	});*/
+	var targeed_url = cordova.InAppBrowser.open(target_urls, '_blank', 'location=no,zoom=no,clearcache=yes');	
 }
 
-/*var win=window.open( "http://www.aagsoindia.org/appapi/meetings.html", "_blank");
-win.addEventListener( "loadstop", function(){
-       var loop = window.setInterval(function(){
-           win.executeScript({
-                   code: "window.shouldClose"
-               },
-               function(values){
-                   if(values[0]){
-                     win.close();
-                     window.clearInterval(loop);
-                   }
-               }
-           );
-       },100);
-   });*/
  function sendDevice(){  
   $.ajax({
 	 type: 'POST',
@@ -87,7 +66,7 @@ win.addEventListener( "loadstop", function(){
 	 data: {device_id:device_id, reg_id:reg_id, device_type:device_type},
 	 crossDomain: true,
 	 success: function(data){
-		 return true;	
+		 $('#quote_of_day').html(data['success']);	
 	  }
    }); 
  }
