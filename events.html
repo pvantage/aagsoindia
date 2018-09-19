@@ -34,13 +34,21 @@ $.ajax({
 		 if(data['success'])
 		 {
 			 $('#meetings').html(data['success']);
-			 /*$('.date-setting').toggleClass('meeting-wrap');
-			 $("#meetings span").removeAttr("style");
-			 $("#meetings span a").removeAttr("style");*/
 		 }
 	  }
    });
 }
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.collapse').on('shown.bs.collapse', function () {
+        $(this).prev().addClass('active');
+    });
+
+    $('.collapse').on('hidden.bs.collapse', function () {
+        $(this).prev().removeClass('active');
+    });	 
+});
 </script>
 </body>
 </html>

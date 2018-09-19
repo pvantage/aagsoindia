@@ -20,15 +20,28 @@
 <header class="site-header"> <a class="top-back" href="index.html"><i aria-hidden="true" class="fa fa-chevron-left"></i> Back</a>
     <h2 class="top-title">Literature</h2>
     <a class="top-home" href="index.html"><i aria-hidden="true" class="fa fa-home"></i></a> </header>
-<div class="container pt-4 pb-3">   
-   <p><b>12 Steps of Alcoholics Anonymous</b><br><br>
-    The relative success of the A.A. programme seems to be due to the fact that an alcoholic who no longer drinks has an exceptional faculty for “reaching” and helping an uncontrolled drinker.
+<div class="container pt-4 pb-3">
+
+<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+ 
+  <div class="card">  
+    <div class="card-header active" role="tab" id="headingOne1">
+      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+        12 Steps of Alcoholics Anonymous&nbsp;&nbsp;<i class="fa fa-angle-down rotate-icon"></i>
+      </a>
+    </div>
+
+   
+    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+      <div class="card-body">
+        <p>The relative success of the A.A. programme seems to be due to the fact that an alcoholic who no longer drinks has an exceptional faculty for “reaching” and helping an uncontrolled drinker.
 
 In simplest form, the A.A. programme operates when a recovered alcoholic passes along the story of his or her own problem drinking, describes the sobriety he or she has found in A.A., and invites the newcomer to join the informal Fellowship.
 
 The heart of the suggested programme of personal recovery is contained in Twelve Steps describing the experience of the earliest members of the Society:</p>
 
-   <ol class="order-list mt-3">
+		<ol class="order-list mt-3">
    <li>We admitted we were powerless over alcohol – that our lives had become unmanageable.</li>   
    <li>Came to believe that a Power greater than ourselves could restore us to sanity.</li>   
    <li>Made a decision to turn our will and our lives over to the care of God as we understood him.</li>
@@ -49,16 +62,22 @@ The heart of the suggested programme of personal recovery is contained in Twelve
     <p>Newcomers are not asked to accept or follow these Twelve Steps in their entirety if they feel unwilling or unable to do so.<br><br>
     They will usually be asked to keep an open mind, to attend meetings at which recovered alcoholics describe their personal experiences in achieving sobriety, and to read A.A. literature describing and interpreting the A.A. programme.
     </p>
-       
-    <p><b>The 12 Traditions of A.A. (Short Form)</b><br><br>
-    <b>The Twelve Traditions of Alcoholics Anonymous</b></p>
+      </div>
+    </div>
 
+  </div>
+  
+  <div class="card">
+    <div class="card-header" role="tab" id="headingTwo2">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">The 12 Traditions of A.A. - Short Form&nbsp;&nbsp;<i class="fa fa-angle-down rotate-icon"></i></a>
+    </div>
+    <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
+  <div class="card-body">
+  <p><b>The Twelve Traditions of Alcoholics Anonymous</b></p>
    <ol class="order-list mt-3">
    <li>Our common welfare should come first; personal recovery depends upon A.A. unity.</li>   
    <li>For our group purpose, there is but one ultimate authority — a loving God as He may express Himself in our group conscience. Our leaders are but trusted servants; they do not govern.</li>   
    <li>The only requirement for A.A. membership is a desire to stop drinking.</li>
-   
-   
    <li>Each group should be autonomous except in matters affecting other groups or A.A. as a whole.</li>
    <li>Each group has but one primary purpose — to carry its message to the alcoholic who still suffers.</li>
    <li>An A.A. group ought never endorse, finance, or lend the A.A. name to any related facility or outside enterprise, lest problems of money, property, and prestige divert us from our primary purpose.</li>
@@ -70,10 +89,8 @@ The heart of the suggested programme of personal recovery is contained in Twelve
    <li>Anonymity is the spiritual foundation of all our traditions, ever reminding us to place principles before personalities.</li>
     </ol>
     
-    
     <p><b>THE TWELVE TRADITIONS OF ALCOHOLICS ANONYMOUS (LONG FORM)</b><br>
-    Our A.A. experience has taught us that:</p>
-    
+    Our A.A. experience has taught us that:</p>    
     
    <ol class="order-list mt-3">
    <li>Each member of Alcoholics Anonymous is but a small part of a great whole. A.A. must continue to live or most of us will surely die. Hence our common welfare comes first. But individual welfare follows close afterward.</li>   
@@ -101,8 +118,23 @@ The heart of the suggested programme of personal recovery is contained in Twelve
    
    Copyright (c) 1952, 1953, 1981 by The A.A. Grapevine, Inc. and Alcoholics Anonymous Publishing (now known as Alcoholics Anonymous World Services, Inc.) All rights reserved.
    </li>
-    </ol>
-    
+    </ol>       
+        
+    </div>
+  </div> 
+</div>    
 </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.collapse').on('shown.bs.collapse', function () {
+        $(this).prev().addClass('active');
+    });
+
+    $('.collapse').on('hidden.bs.collapse', function () {
+        $(this).prev().removeClass('active');
+    });	 
+});
+</script>
 </body>
 </html>

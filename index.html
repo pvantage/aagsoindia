@@ -17,13 +17,11 @@
 <script src="js/function.js"></script>
 <script type="text/javascript">
 var device_id, reg_id, device_type;
-	
-function getDevice(){
+function getDevice(){			
+	device_type = device.platform;
+	device_id = device.uuid;
 			
-			device_type = device.platform;
-			device_id = device.uuid;
-			
-			var push = PushNotification.init({ "android": {"senderID": "436387133557"}, "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+	var push = PushNotification.init({ "android": {"senderID": "436387133557"}, "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 		
 		push.on('registration', function(data)
 		{						
@@ -31,8 +29,8 @@ function getDevice(){
 			
 			sendDevice();			
 		});
-  }
-	
+}
+
 document.addEventListener("deviceready", getDevice, false);
 </script>
 </head>
@@ -44,47 +42,34 @@ document.addEventListener("deviceready", getDevice, false);
         <ul>
             <li><a href="javascript:void(0);" onClick="showMeeting('http://www.aagsoindia.org/appapi/meetings.html');">Meetings</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="faq.html">FAQs</a></li>            
+            <li><a href="faq.html">FAQs</a></li>
             <li><a href="javascript:void(0);" onClick="showMeeting('http://www.aagsoindia.org/need-help/quiz/');">Do you have a drinking problem?</a></li>
             <li><a href="javascript:void(0);" onClick="showMeeting('http://www.aagsoindia.org/existing-members');">Existing Member</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="litreature.html">Literature</a></li>
-            
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </div>
-   <div class="quote-of-the-day">
-        <b>Quote of the day</b>
-        <p id="quote_of_day"></p> </div>
-        
-   <div class="quote-of-the-day">
-        <p><b>Our Address</b><br>
-        
-    G.S.O. INDIA<br>
-    Office no 116 (A, B & C),<br>
-    Bharat Shatrughna Comm Complex,<br>
-    Above Hotel Bhagat Tarachand<br>
-    Near MAFCO market<br>
-    Sanpada, Sector 18, Navi Mumbai – 400703
-</p>
-    </div>     
+<div class="quote-of-the-day">
+ <b>Quote of the day</b>
+   <p id="quote_of_day"></p></div>
 </div>
 <script type="text/javascript">
 function showMeeting(target_urls){
-	var targeed_url = cordova.InAppBrowser.open(target_urls, '_blank', 'location=no,zoom=no,clearcache=yes');	
+	var targeed_url = cordova.InAppBrowser.open(target_urls, '_blank', 'location=no,zoom=no,clearcache=yes');
 }
 
- function sendDevice(){  
+function sendDevice(){
   $.ajax({
-	 type: 'POST',
+	 type:'POST',
 	 url: siteurl + 'notifications.php',
-	 dataType: 'json',
-	 data: {device_id:647567567, reg_id:534546456, device_type:'android'},
-	 crossDomain: true,
+	 dataType:'json',
+	 data: {device_id:device_id, reg_id:reg_id, device_type:device_type},
+	 crossDomain:true,
 	 success: function(data){
-		 $('#quote_of_day').html(data['success']);	
+		 $('#quote_of_day').html(data['success']);
 	  }
-   }); 
+   });
  }
 </script>
 </body>
