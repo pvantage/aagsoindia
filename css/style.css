@@ -17,4 +17,6 @@ h4 {font-size:18px;}.form-control{font-size:14px;}.blue-background {background-c
 
 .top-phone-no{ padding:2px 15px; text-align:right;}p.address{ text-align:center; font-size:16px;}.our_address{padding: 0 15px 30px; font-size:15px; text-align:center;}.pb-3 .card{ margin-bottom:10px;}
 .card-header a{ color:#212529; font-size:12px;}.card-header.active a{ color:#fff;}
-.top-phone-no a{ display:inline-block; color:#212529;}.repeat_event{ margin-bottom:10px; border-bottom:1px dashed #206ab7; padding-bottom:5px;}
+.top-phone-no a{ display:inline-block; color:#212529;}
+.repeat_event{ margin-bottom:10px; border-bottom:1px dashed #206ab7; padding-bottom:15px;}
+.repeat_event:last-child{ border:none;padding-bottom:0px;margin-bottom:0px;}
