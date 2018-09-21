@@ -3,7 +3,7 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "aagsoindia.org"
     versionCode = "1" 
-    version     = "1.0.0" >
+    version     = "1.0.1" >
 
    <name>Alcoholics Anonymous India</name>
     <description>Alcoholics Anonymous India - Get help for your Drinking Problem</description>
@@ -18,7 +18,7 @@
 	<plugin name="phonegap-plugin-push" spec="~1.9.0">
 	 	<variable name="SENDER_ID" value="1:436387133557:android:197d2bb65bf65c37" />
 	 </plugin>
-	
+	<preference name="android-targetSdkVersion" value="26"/>
 	<plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
 	<icon src="icon.png" />
 	<icon gap:platform="webos" src="res/icon/ios/Icon-180.png" />
