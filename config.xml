@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns   = "http://www.w3.org/ns/widgets"
-    xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "aagsoindia.org"
-    versionCode = "1" 
-    version     = "1.0.1" >
+    <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id= "aagsoindia.org" versionCode = "1" 
+    version= "1.0.1" android-versionCode="13">
+	
+	<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id= "iosaagsoindia.org" versionCode = "1" 
+    version= "1.0.1" ios-CFBundleVersion="0.1.3">
 
    <name>Alcoholics Anonymous India</name>
     <description>Alcoholics Anonymous India - Get help for your Drinking Problem</description>
