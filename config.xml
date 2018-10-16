@@ -8,8 +8,8 @@
    <name>Alcoholics Anonymous India</name>
     <description>Alcoholics Anonymous India - Get help for your Drinking Problem</description>
 
-    <author href="http://www.aagsoindia.org" email="info@aagsoindia.org">
-      Alcoholics Anonymous India
+    <author href="http://www.vantagewebtech.com" email="vantage.krishna@gmail.com">
+      Krishna Kumar
     </author>	
 	
 	<plugin name="cordova-plugin-device" spec="~1.1.6" />
