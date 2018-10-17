@@ -3,8 +3,10 @@
    <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "aagsoindia.org"
+	android-packageName="aagsoindia.org"
+    ios-CFBundleIdentifier="iosaagsoindia.org"
     versionCode = "1.0.2" 
-    version     = "1.0.5" >
+    version     = "1.0.6" >
 	
 	
    <name>Alcoholics Anonymous India</name>
