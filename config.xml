@@ -5,8 +5,8 @@
     id          = "aagsoindia.org"
 	android-packageName="aagsoindia.org"
     ios-CFBundleIdentifier="iosaagsoindia.org"
-    versionCode = "1.0.2" 
-    version     = "1.0.6" >
+    versionCode = "1.0.3" 
+    version     = "1.0.7" >
 	
 	
    <name>Alcoholics Anonymous India</name>
